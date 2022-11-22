@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+<title>CASCADE</title>
+{%endblock%}
+</head>
+{%block content%}
+<body class="bg-dark ">
+    <h4 class="home-title text-center m-4 text-light">My Posts</h4>
+    {% for post in object_list reversed %}
+    <div class="container container-fluid card shadow-sm p-3 mb-5 bg-body rounded m-4 p-3">
+        <div class="card-header slanted">
+         Written by {{post.author}} on {{post.publish}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title home-title">{{post.title}}</h5>
+            <p class="card-text home-text">{{post.body|truncatewords:50|linebreaks}}</p>
+            <a href="{% url 'post_detail' post.pk %}" class="btn btn-dark ">Read More</a>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+{% endblock content%}
+</html>

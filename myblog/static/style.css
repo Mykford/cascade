@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Condensed&display=swap');
+.slanted{
+    font-family: cursive
+}
+
+.home-title{
+    font-family: 'Lato', sans-serif
+}
+.home-text{
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+.edit-title{
+    color: red;
+}

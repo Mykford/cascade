@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block title %}
+<title>CREATE POST</title>
+{%endblock%}
+{% block content%}
+
+<h2 class="home-title text-center m-4 p-3">New Post</h2>
+<div class="container-fluid p-2 m-3">
+    <form action="" method="post" class="form-control p-3">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Save" class="btn btn-dark text-light">
+    </form>
+
+</div>
+
+{% endblock content %}

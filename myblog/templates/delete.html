@@ -1,0 +1,19 @@
+{% extends 'base.html '%}
+{%block title%} <title>Delete {{posts.title}}</title> {%endblock%}
+{%block content%}
+<style>
+    p{
+        color: red;
+    }
+</style>
+
+<h2 class="home-title text-center m-4 p-3"><span class="edit-title">{{posts.title}}</span></h2>
+<div class="container-fluid p-2 m-3">
+    <form action="" method="post" class="form-control p-3"> 
+             {% csrf_token %}
+        <p>ARE YOU SURE YOU WANT TO DELETE THIS POST?</p>
+        <input type="submit" value="Delete" class="btn btn-dark text-light">
+    </form>
+
+</div>
+{%endblock%}
