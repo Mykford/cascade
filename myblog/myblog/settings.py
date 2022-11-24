@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'post'
+    'post',
+    'accounts.apps.AccountsConfig' # accounts app 
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR/'static')]
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Creating a log in and a logout redirect url
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'

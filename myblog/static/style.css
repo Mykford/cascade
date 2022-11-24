@@ -13,3 +13,7 @@
 .edit-title{
     color: red;
 }
+.name{
+    display: flex;
+    justify-content: center;
+}

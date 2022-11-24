@@ -11,7 +11,11 @@
 </head>
 {%block content%}
 <body class="bg-dark ">
+    {%if user.is_authenticated %}
+    <h4 class="home-title text-center m-4 text-light">{{user.username}}</h4>
+     {%else%}
     <h4 class="home-title text-center m-4 text-light">My Posts</h4>
+    {%endif%}
     {% for post in object_list reversed %}
     <div class="container container-fluid card shadow-sm p-3 mb-5 bg-body rounded m-4 p-3">
         <div class="card-header slanted">

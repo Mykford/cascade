@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content%}
+<h4></h4>
+<div class="container-fluid">
+<h2 class="text-center m-3 p-4 home-title">Log Out {{user.username}}</h2>
+</div>
+<form action="" method="post" class=" text-center">
+    {% csrf_token%}
+
+    {{form.as_p}}
+    <input type="submit" value="LogOut" class="btn btn-dark text-light">
+
+</form>
+
+{% endblock %}

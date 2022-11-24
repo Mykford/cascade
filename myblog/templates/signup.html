@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block title %}
+<title>Sign Up</title>
+{%endblock%}
+{% block content%}
+<h4></h4>
+<div class="container-fluid">
+<h2 class="text-center m-3 p-4 home-title">Sign Up</h2>
+</div>
+<form action="" method="post" class=" text-center">
+    {% csrf_token%}
+
+    {{form.as_p}}
+    <input type="submit" value="Sign Up" class="btn btn-dark text-light">
+
+</form>
+
+{% endblock %}
