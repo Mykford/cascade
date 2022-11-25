@@ -21,10 +21,13 @@
     <p class="home-text p-2">
         {{posts.body}}
     </p>
+    {% if user.is_authenticated%}
     <div class="div">
         <a href="{% url 'edit' posts.pk %}" class="btn btn-dark">Edit </a> 
         <a href="{% url 'delete' posts.pk %}" class="btn btn-dark delete">Delete</a>
     </div>
+   
+    {%endif%}
 </div>
 
  {% endblock %}
