@@ -24,6 +24,7 @@
         <div class="card-body">
             <h5 class="card-title home-title">{{post.title}}</h5>
             <p class="card-text home-text">{{post.body|truncatewords:50|linebreaks}}</p>
+            <p class="card-text home-text">Category: {{post.category}}</p>
             <a href="{% url 'post_detail' post.pk %}" class="btn btn-dark ">Read More</a>
         </div>
     </div>

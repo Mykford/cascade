@@ -1,19 +1,11 @@
 {% extends 'base.html'%}
 {% block title %}
-<title>CREATE POST</title>
+<title>NEW CATEGORY</title>
 {%endblock%}
 {% block content%}
-<style>
-.category{
-    text-decoration: none;
-    color: red;
-    display: inline-block;
-    padding: 1rem;
-}
-</style>
+
 {% if user.is_authenticated %}
-<h2 class="home-title text-center m-4 p-3">New Post</h2>
-<a href="{% url 'add_category' %} " class="category">Add New Category</a>
+<h2 class="home-title text-center m-4 p-3">Add New Category</h2>
 <div class="form-group mb-3">
     <div class="container-fluid p-2 m-3">
         <form action="" method="post" class="form-control p-3">
@@ -24,13 +16,13 @@
     </div>
 </div>
 {%else%}
-<div class="container-fluid text-center">
 
-    <h2 class="home-title text-center m-4 p-3">You Have To Be Logged In To Create A Post</h2>
+<div class="container-fluid text-center">
+    <h2 class="home-title text-center m-4 p-3">You have to Be Logged In To Add A Category</h2>
     <a href="{% url 'login' %}" class="btn btn-danger text-light">Log In Here</a>
+
 </div>
 {%endif%}
-
     
 
 
