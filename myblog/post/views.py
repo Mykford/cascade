@@ -39,7 +39,12 @@ class CategoryView(CreateView):
     fields = '__all__'
 
 def FullCategoryView(request, category):
-    category_post =Posts.objects.filter(category=category),
-    return render(request,'categories.html',{'category_post':category_post})
+    category_posts =Posts.objects.filter(category=category),
+    return render(request,'categories.html',{'category_posts':category_posts })
+
+# class AllCategoryView(ListView):
+#     def get_queryset(self):
+#         return Categories.objects.filter(id=self.kwargs['id'])
+    
 
           

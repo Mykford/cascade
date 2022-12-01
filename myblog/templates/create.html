@@ -12,6 +12,7 @@
 }
 </style>
 {% if user.is_authenticated %}
+{% if user.id == posts.author.id%}
 <h2 class="home-title text-center m-4 p-3">New Post</h2>
 <a href="{% url 'add_category' %} " class="category">Add New Category</a>
 <div class="form-group mb-3">
@@ -23,15 +24,24 @@
         </form>
     </div>
 </div>
+{% else %}
+<div class="container-fluid text-center">
+    <h2 class="home-title text-center m-4 p-3">You have to be logged in as {{posts.author}} to Create a Post</h2>
+</div>
+{%endif%}
 {%else%}
 <div class="container-fluid text-center">
-
     <h2 class="home-title text-center m-4 p-3">You Have To Be Logged In To Create A Post</h2>
     <a href="{% url 'login' %}" class="btn btn-danger text-light">Log In Here</a>
 </div>
+
 {%endif%}
 
-    
+
+<script>
+    const name = '{{user.first_name}}';
+    document.getElementById('thisuser').value = name
+</script>
 
 
 {% endblock content %}

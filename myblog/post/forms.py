@@ -13,7 +13,8 @@ class CreateForm(forms.ModelForm):
         fields = ['title','author','body','category','status']
         widgets ={
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'author': forms.Select(attrs={'class':'form-select'}),
+            'author': forms.TextInput(attrs={'class': 'form-control','value':'','id':'thisuser','type':'hidden'}),
+            # 'author': forms.Select(attrs={'class':'form-select'}),
             'category':forms.Select(choices=categor_choices,attrs={'class':'form-select'}),
             'body': forms.Textarea(attrs={
                 'class':'form-control',

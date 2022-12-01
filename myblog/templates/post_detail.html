@@ -23,11 +23,12 @@
         {{posts.body}}
     </p>
     {% if user.is_authenticated%}
+    {%if user.id == posts.author.id%}
     <div class="div">
         <a href="{% url 'edit' posts.pk %}" class="btn btn-dark">Edit </a> 
         <a href="{% url 'delete' posts.pk %}" class="btn btn-dark delete">Delete</a>
     </div>
-   
+   {%endif%}
     {%endif%}
 </div>
 

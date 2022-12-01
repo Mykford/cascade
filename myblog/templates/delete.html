@@ -8,6 +8,7 @@
 </style>
 
 {%if user.is_authenticated %}
+{%if user.id == posts.author.id%}
 <h2 class="home-title text-center m-4 p-3"><span class="edit-title">{{posts.title}}</span></h2>
 <div class="container-fluid p-2 m-3">
     <form action="" method="post" class="form-control p-3"> 
@@ -17,11 +18,16 @@
     </form>
 </div>
 {%else%}
+<div class="container-fluid text-center">
+    <h2 class="home-title text-center m-4 p-3">You have to be logged in as {{post.author}} to Delete this Post</h2>
+</div>
+{%else%}
 <div class="container container-fluid text-center ">
     <h3 class="home-title text-center text-danger m-3 p-2">YOU ARE NOT AUTHORIZED TO DELETE THIS POST</h3>
     <a href="{% url 'login' %}" class="btn btn-danger text-light ">Log In</a>
 </div>
 
+{%endif%}
 {%endif%}
 
 {%endblock%}
