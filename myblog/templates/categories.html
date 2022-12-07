@@ -1,7 +1,24 @@
-{% extends 'base.html'%}
-{% block content %}
+<!-- {% extends 'base.html'%}
 
-{% for postss in category_posts %}
-<h1>{{posts.title}}</h1>
+{%block content%}
+{% block title %}
+<title>{{cats}}</title>
+{%endblock%}
+<h1 class="home-title text-center m-4 p-3"><span class="makecapital">{{cats}} category</span></h1><hr>
+
+{% for post in category_posts %}
+<div class="container container-fluid card shadow-sm p-3 mb-5 bg-body rounded m-4 p-3">
+    <div class="card-header slanted">
+     Written by {{post.author}} on {{post.publish}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title home-title">{{post.title}}</h5>
+        <p class="card-text home-text">{{post.body|truncatewords:50|linebreaks}}</p>
+        <p class="card-text home-text">Category: {{post.category}}</p>
+        
+    </div>
+</div>
+
+
 {%endfor%}
-{%endblock content%}
+{% endblock %} -->

@@ -19,6 +19,7 @@ class Posts(models.Model):
     publish = models.DateTimeField(default=timezone.now)
     status = models.CharField(choices=STATUS_CHOICES,default='published',max_length=10)
     category = models.CharField(max_length=500, default='coding')
+    likes = models.ManyToManyField(User,related_name='blog_posts')
 
 
     class Meta:
